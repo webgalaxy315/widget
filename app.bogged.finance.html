@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <style type="text/css">
+    .justify{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    iframe {
+      width: 100%;
+    }
+
+    iframe.iframe-coin {
+      height: 40px;
+    }
+
+    iframe.iframe-table,
+    .iframe-trading {
+      height: 500px;
+    }
+    .iframe-dex1 {
+      height: 900px;
+    }
+    .iframe-dex2 {
+      height: 900px;
+    }
+
+    .iframe-table html body header .mainHeader{
+      display: none!important;
+    }
+
+    div.demo {
+      width: 250px;
+      height: 250px;
+      box-shadow: 16px 14px 20px #0000008c;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div.demo::before {
+      content: "";
+      /* override the gradient here */
+      background-image: conic-gradient(#ff0052 20deg,
+          transparent 120deg);
+      width: 150%;
+      height: 150%;
+      position: absolute;
+      animation: rotate 2s linear infinite;
+    }
+
+    div.demo::after {
+      content: "CSSScript";
+      width: 240px;
+      height: 240px;
+      background: #101010;
+      position: absolute;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ff0052;
+      font-size: larger;
+      letter-spacing: 5px;
+      box-shadow: inset 20px 20px 20px #0000008c;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="demo"></div> -->
+  <!-- <iframe class="iframe-coin"
+    src="https://widget.coinlib.io/widget?type=horizontal_v2&amp;theme=light&amp;pref_coin_id=1505&amp;invert_hover=no"></iframe><br><br><br>
+  <iframe class="iframe-table"
+    src="https://www.widgets.investing.com/top-cryptocurrencies?theme=darkTheme&amp;roundedCorners=true"
+    className="main7_iframe"></iframe>
+  <br><br><br>
+  <iframe class="iframe-trading" id="tradingview_6b256"
+    src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_6b256&amp;symbol=BTCUSD&amp;interval=1&amp;hidesidetoolbar=0&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;details=1&amp;calendar=1&amp;studies=%5B%5D&amp;theme=Light&amp;style=1&amp;timezone=Etc%2FUTC&amp;withdateranges=1&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en&amp;utm_source=www.hydrainvestmentcompany.com&amp;utm_medium=widget_new&amp;utm_campaign=chart&amp;utm_term=BTCUSD"
+    className="main7_iframe_trading"></iframe>
+  <br><br><br> -->
+
+
+  <div class="justify">
+    <!-- <iframe class="iframe-dex1" src="https://app.bogged.finance/avax/swap?chain=avalanche&amp;tokenIn=0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664&amp;tokenOut=0xc8a251142722ceb4a524876b89cc4c0709585818&amp;embed=1&amp;theme=dark" class="bogged-dex"></iframe> -->
+    <iframe id="aggregater" class="iframe-dex2" src="https://app.bogged.finance/bsc/swap?chain=bsc&amp;tokenIn=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c&amp;tokenOut=0x56083560594e314b5cdd1680ec6a493bb851bbd8&amp;embed=1&amp;theme=dark" class="bogged-dex"></iframe>
+    <!-- wbnb address : 0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c -->
+    <!-- bnb address : 0xB8c77482e45F1F44dE1745F52C74426C631bDD52 -->
+    <!-- transhuman address : 0x56083560594e314b5cdd1680ec6a493bb851bbd8 -->
+  </div>
+
+   
+</body>
+<script>
+  
+  // Let's say that you want to access a button with the ID `'myButton'`,
+  // you can access via the following code:
+  // const buttonInIFrame = iFrame.contentWindow;
+
+
+//   const iFrame = document.getElementsByTagName('iframe').contentWindow.document.getElementsByTagName('body');
+// const buttonInIFrame = iFrame.contentWindow.document.getElementsTagName('body');
+//   console.log(buttonInIFrame)
+
+
+console.log('this is my first exam')
+const iframe = document.getElementById("aggregater");
+const iWindow = iframe.contentWindow;
+const iDocument = iWindow.document;
+console.log(iDocument)
+
+// accessing the element
+const element = iDocument.getElementsByTagName("div")[0];
+console.log(element)
+// element.style.color = "green";
+</script>
+
+</html>
